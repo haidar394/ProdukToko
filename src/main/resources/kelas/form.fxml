@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.FormController"
+            stylesheets="@styles/app.css">
+    <top>
+        <HBox spacing="16" styleClass="header">
+            <Label text="Pencatatan Produk Toko" styleClass="title"/>
+            <Button text="Lihat Daftar Produk" onAction="#bukaDaftar"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox spacing="16" styleClass="page">
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Tambah Produk Baru" styleClass="subtitle"/>
+                        <Label text="Nama Produk"/>
+                        <TextField fx:id="namaField" promptText="Contoh: Roti Cokelat"/>
+                        <Label text="Kategori Produk"/>
+                        <ComboBox fx:id="kategoriBox" maxWidth="Infinity"/>
+                        <Label text="Harga Produk (Rp)"/>
+                        <TextField fx:id="hargaField" promptText="Contoh: 15000"/>
+                        <Label text="Nama tidak boleh kosong dan harga harus lebih dari nol."
+                               wrapText="true" styleClass="muted"/>
+                        <Button text="Simpan dan Lihat Detail"
+                                onAction="#simpan"
+                                styleClass="button-primary"
+                                maxWidth="Infinity"/>
+                        <Label fx:id="pesanLabel" wrapText="true" styleClass="error"/>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
+
